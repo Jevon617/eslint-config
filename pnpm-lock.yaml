@@ -63,10 +63,12 @@ importers:
       '@jevon617/eslint-config-ts': workspace:*
       eslint: 8.23.0
       eslint-define-config: ^1.7.0
+      eslint-import-resolver-alias: ^1.1.2
       eslint-plugin-vue: ^9.4.0
     dependencies:
       '@jevon617/eslint-config-ts': link:../typescript
       eslint-define-config: 1.7.0
+      eslint-import-resolver-alias: 1.1.2
       eslint-plugin-vue: 9.4.0_eslint@8.23.0
     devDependencies:
       eslint: 8.23.0
@@ -991,6 +993,13 @@ packages:
   /eslint-define-config/1.7.0:
     resolution: {integrity: sha512-13zk8z8eKO4tpPMvAGV0sa6ok0XuMeu7Zhcizu2bLwcLy1fbNt7/h8PU1wbp9IoIgQETggZJozU0nPXUXOao2g==}
     engines: {node: '>= 14.6.0', npm: '>= 6.0.0', pnpm: '>= 7.0.0'}
+    dev: false
+
+  /eslint-import-resolver-alias/1.1.2:
+    resolution: {integrity: sha512-WdviM1Eu834zsfjHtcGHtGfcu+F30Od3V7I9Fi57uhBEwPkjDcii7/yW8jAT+gOhn4P/vOxxNAXbFAKsrrc15w==}
+    engines: {node: '>= 4'}
+    peerDependencies:
+      eslint-plugin-import: '>=1.4.0'
     dev: false
 
   /eslint-import-resolver-node/0.3.6:

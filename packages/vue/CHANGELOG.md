@@ -1,5 +1,11 @@
 # @jevon617/eslint-config-vue
 
+## 0.0.5
+
+### Patch Changes
+
+- feat: add eslint-import-resolver-alias
+
 ## 0.0.3
 
 ### Patch Changes
