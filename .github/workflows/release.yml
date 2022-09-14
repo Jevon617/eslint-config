@@ -26,13 +26,11 @@ jobs:
         run: pnpm install
 
       - name: Publish
-        uses: wtrocki/npm-publish-monorepo-action@2.0.0
+        uses: wangziling100/AutoPublish@v1.2
         with:
-          workspace: ./packages
+          scope: "@jevon617"
+          strict_error: false
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
-      - name: Send a Slack notification if a publish happens
-        if: steps.changesets.outputs.published == 'true'
-        run: my-slack-bot send-notification --message "A new version of ${GITHUB_REPOSITORY} was published!"
