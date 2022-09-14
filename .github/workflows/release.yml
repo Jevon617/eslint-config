@@ -26,11 +26,10 @@ jobs:
         run: pnpm install
 
       - name: Publish
-        uses: wangziling100/AutoPublish@v1.2
+        uses: wtrocki/npm-publish-action-monorepo@2.0.0
         with:
-          scope: "@jevon617"
-          strict_error: false
+          workspace: ./packages
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NPM_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
