@@ -7,7 +7,8 @@ module.exports = defineConfig({
     node: true,
   },
   extends: [
-    'eslint:recommended',
+    './standard',
+    'plugin:import/recommended',
     'plugin:eslint-comments/recommended',
     'plugin:jsonc/recommended-with-jsonc',
     'plugin:yml/standard',
@@ -15,16 +16,17 @@ module.exports = defineConfig({
   ],
   ignorePatterns: [
     '*.min.*',
+    '*.d.ts',
     'CHANGELOG.md',
     'dist',
     'LICENSE*',
     'output',
     'coverage',
+    'public',
     'temp',
-    'packages-lock.json',
+    'package-lock.json',
     'pnpm-lock.yaml',
     'yarn.lock',
-    'fixtures',
     '__snapshots__',
     '!.github',
     '!.vitepress',
@@ -40,6 +42,17 @@ module.exports = defineConfig({
     {
       files: ['*.json', '*.json5', '*.jsonc', '*rc'],
       parser: 'jsonc-eslint-parser',
+      rules: {
+        'jsonc/array-bracket-spacing': ['error', 'never'],
+        'jsonc/comma-dangle': ['error', 'never'],
+        'jsonc/comma-style': ['error', 'last'],
+        'jsonc/indent': ['error', 2],
+        'jsonc/key-spacing': ['error', { beforeColon: false, afterColon: true }],
+        'jsonc/no-octal-escape': 'error',
+        'jsonc/object-curly-newline': ['error', { multiline: true, consistent: true }],
+        'jsonc/object-curly-spacing': ['error', 'always'],
+        'jsonc/object-property-newline': ['error', { allowMultiplePropertiesPerLine: true }],
+      },
     },
     {
       files: ['package.json'],
@@ -118,6 +131,8 @@ module.exports = defineConfig({
         '@typescript-eslint/no-unused-vars': 'off',
         '@typescript-eslint/no-use-before-define': 'off',
         '@typescript-eslint/no-var-requires': 'off',
+        '@typescript-eslint/comma-dangle': 'off',
+        'import/no-unresolved': 'off',
         'no-alert': 'off',
         'no-console': 'off',
         'no-restricted-imports': 'off',
@@ -128,51 +143,48 @@ module.exports = defineConfig({
     },
   ],
   rules: {
-    // import
-    'import/first': 'error',
-    'import/no-mutable-exports': 'error',
-    'import/no-duplicates': 'error',
-    'import/order': [
-      'error',
-      {
-        groups: [
-          'builtin',
-          'external',
-          'internal',
-          'parent',
-          'sibling',
-          'index',
-          'object',
-          'type',
-        ],
-        pathGroups: [{ pattern: '@/**', group: 'internal' }],
-        pathGroupsExcludedImportTypes: ['type'],
-      },
-    ],
-
-    // Common
+    // import: https://www.npmjs.com/package/eslint-plugin-import
+    'import/first': 'error', // 确保引入模块的语句在所有语句之前
+    'import/no-mutable-exports': 'error', // 静止let, var 这种变量的导出
+    'import/no-duplicates': 'error', // 不能重复引入模块
+    'import/order': 'error',
+    // Common： https://eslint.bootcss.com/docs/rules/
+    semi: ['error', 'never'],
+    curly: ['error', 'multi-or-nest', 'consistent'],
+    quotes: ['error', 'single'],
     'no-unused-vars': 'warn',
+    'no-param-reassign': 'off',
+    'array-bracket-spacing': ['error', 'never'],
+    'brace-style': ['error', 'stroustrup', { allowSingleLine: true }],
+    'block-spacing': ['error', 'always'],
+    camelcase: 'off',
+    'comma-spacing': ['error', { before: false, after: true }],
+    'comma-style': ['error', 'last'],
+    'comma-dangle': ['error', 'always-multiline'],
     'no-constant-condition': 'warn',
-    'no-debugger': 'warn',
-    'no-console': ['warn', { allow: ['warn', 'error'] }],
+    'no-debugger': 'error',
+    'no-console': 'off',
+    'no-cond-assign': ['error', 'always'],
+    'func-call-spacing': ['off', 'never'],
+    'key-spacing': ['error', { beforeColon: false, afterColon: true }],
+    indent: ['error', 2, { SwitchCase: 1, VariableDeclarator: 1, outerIIFEBody: 1 }],
     'no-restricted-syntax': [
       'error',
-      'ForInStatement',
-      'LabeledStatement',
+      'DebuggerStatement',
       'WithStatement',
     ],
-    'no-return-await': 'warn',
-    'no-empty': ['error', { allowEmptyCatch: true }],
-    'sort-imports': [
+    'object-curly-spacing': ['error', 'always'],
+    'no-return-await': 'off',
+    'space-before-function-paren': [
       'error',
       {
-        ignoreCase: false,
-        ignoreDeclarationSort: true,
-        ignoreMemberSort: false,
-        memberSyntaxSortOrder: ['none', 'all', 'multiple', 'single'],
-        allowSeparatedGroups: false,
+        anonymous: 'always',
+        named: 'never',
+        asyncArrow: 'always',
       },
     ],
+    'no-multiple-empty-lines': ['error', { max: 1, maxBOF: 0, maxEOF: 1 }],
+    'no-lonely-if': 'error',
 
     // es6
     'no-var': 'error',
@@ -204,11 +216,9 @@ module.exports = defineConfig({
     'no-with': 'error',
     'no-void': 'error',
 
-    // stylistic-issues
-    'no-lonely-if': 'error',
-    'prefer-exponentiation-operator': 'error',
-
-    // unicorns
+    // unicorns:
+    // https://www.npmjs.com/package/eslint-plugin-unicorn
+    // https://www.5axxw.com/wiki/content/rt7e98
     'unicorn/better-regex': 'error',
     'unicorn/custom-error-definition': 'error',
     'unicorn/error-message': 'error',
@@ -250,13 +260,12 @@ module.exports = defineConfig({
     'unicorn/prefer-prototype-methods': 'error',
     'unicorn/prefer-query-selector': 'error',
     'unicorn/prefer-reflect-apply': 'error',
-    // 'unicorn/prefer-string-replace-all': 'error',
+    'unicorn/prefer-string-replace-all': 'error',
     'unicorn/prefer-string-slice': 'error',
     'unicorn/prefer-string-starts-ends-with': 'error',
     'unicorn/prefer-string-trim-start-end': 'error',
     'unicorn/prefer-type-error': 'error',
     'unicorn/throw-new-error': 'error',
-
     'eslint-comments/disable-enable-pair': 'off',
 
     'jsonc/quote-props': 'off',

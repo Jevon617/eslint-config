@@ -1,15 +1,16 @@
 {
-  "name": "@sxzz/eslint-config-monorepo",
-  "version": "2.4.3",
+  "name": "@jevon617/eslint-config-monorepo",
+  "version": "0.0.1",
   "private": true,
   "license": "MIT",
-  "author": "三咲智子 <sxzz@sxzz.moe> (https://github.com/sxzz/)",
+  "author": "jevon617 <wen.jian@belle.com.cn> (https://github.com/jevon617/)",
   "scripts": {
     "lint": "eslint . --ext .js,.ts,.json,.json5,.vue,.md --fix",
     "release": "bumpp package.json packages/*/package.json && pnpm publish -r"
   },
   "devDependencies": {
-    "@sxzz/eslint-config": "workspace:*",
+    "@changesets/cli": "^2.24.4",
+    "@jevon617/eslint-config-basic": "workspace:*",
     "bumpp": "^8.2.1",
     "eslint": "^8.23.0",
     "typescript": "^4.8.2"

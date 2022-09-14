@@ -1,18 +1,22 @@
-# @sxzz/eslint-config
+# @jevon617/eslint-config
 
-ESLint config for JavaScript, TypeScript, Vue 2, Vue 3, Prettier.
+ESLint config for JavaScript, TypeScript, Vue 2, Vue 3.
 
-Forked from [antfu/eslint-config](https://github.com/antfu/eslint-config)
+Forked from [sxzz/eslint-config](https://github.com/antfu/eslint-config)
+
+- Single quotes, no semi
+- Auto fix for formatting (aimed to be used standalone without Prettier)
+- TypeScript, Vue, JavaScript out-of-box
+- Lint also for json, yaml, markdown
+- Sorted imports, dangling commas for cleaner commit diff
+- Reasonable defaults, best practices, only one-line of config
 
 ## Usage
 
 ```bash
-pnpm i -D @sxzz/eslint-config-basic # JavaScript only
-# Or yarn add -D / npm install -D
-pnpm i -D @sxzz/eslint-config-ts # JavaScript and TypeScript
-pnpm i -D @sxzz/eslint-config-vue # JavaScript, TypeScript and Vue 2/3 (Auto detect)
-pnpm i -D @sxzz/eslint-config-prettier # Prettier only
-pnpm i -D @sxzz/eslint-config # JavaScript, TypeScript, Vue 2/3 and Prettier
+pnpm i -D @jevon617/eslint-config-basic # JavaScript only
+pnpm i -D @jevon617/eslint-config-ts # JavaScript and TypeScript
+pnpm i -D @jevon617/eslint-config-vue # TypeScript and Vue3
 ```
 
 ## Quick start
@@ -20,29 +24,17 @@ pnpm i -D @sxzz/eslint-config # JavaScript, TypeScript, Vue 2/3 and Prettier
 ### Vue 3
 
 ```bash
-pnpm i -D @sxzz/eslint-config
+pnpm i -D @jevon617/eslint-config-vue
 ```
 
 ```javascript
 // .eslintrc.js
 module.exports = {
   root: true,
-  extends: ['@sxzz/eslint-config'],
+  extends: ['@jevon617/eslint-config-vue'],
   rules: {
     // Your custom rules
   },
-}
-```
-
-```jsonc
-// .prettierrc
-{
-  "singleQuote": true,
-  "semi": true,
-  "arrowParens": "avoid",
-  "jsxSingleQuote": true,
-  "endOfLine": "lf",
-  "trailingComma": "es5"
 }
 ```
 
@@ -78,14 +70,6 @@ module.exports = {
 }
 ```
 
-## Sponsors
-
-<p align="center">
-  <a href="https://cdn.jsdelivr.net/gh/sxzz/sponsors/sponsors.svg">
-    <img src='https://cdn.jsdelivr.net/gh/sxzz/sponsors/sponsors.svg'/>
-  </a>
-</p>
-
 ## License
 
-MIT License © 2021-PRESENT [三咲智子](https://github.com/sxzz)
+MIT License © 2021-PRESENT [jevon617](https://github.com/jevon617)
