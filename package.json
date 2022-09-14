@@ -6,12 +6,11 @@
   "author": "jevon617 <wen.jian@belle.com.cn> (https://github.com/jevon617/)",
   "scripts": {
     "lint": "eslint . --ext .js,.ts,.json,.json5,.vue,.md --fix",
-    "release": "bumpp package.json packages/*/package.json && pnpm publish -r"
+    "release": "pnpm publish -r"
   },
   "devDependencies": {
     "@changesets/cli": "^2.24.4",
     "@jevon617/eslint-config-basic": "workspace:*",
-    "bumpp": "^8.2.1",
     "eslint": "^8.23.0",
     "typescript": "^4.8.2"
   }
