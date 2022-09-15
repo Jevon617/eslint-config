@@ -3,7 +3,6 @@ const basic = require('@jevon617/eslint-config-basic')
 module.exports = {
   extends: [
     '@jevon617/eslint-config-basic',
-    'plugin:import/typescript',
     'plugin:@typescript-eslint/recommended',
   ],
   settings: {
@@ -13,8 +12,6 @@ module.exports = {
   },
   overrides: basic.overrides,
   rules: {
-    'import/named': 'off',
-
     // TS
     '@typescript-eslint/ban-ts-comment': ['error', { 'ts-ignore': 'allow-with-description' }],
     '@typescript-eslint/member-delimiter-style': ['error', { multiline: { delimiter: 'none' } }],

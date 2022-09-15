@@ -8,7 +8,6 @@ module.exports = defineConfig({
   },
   extends: [
     './standard',
-    'plugin:import/recommended',
     'plugin:eslint-comments/recommended',
     'plugin:jsonc/recommended-with-jsonc',
     'plugin:yml/standard',
@@ -147,7 +146,29 @@ module.exports = defineConfig({
     'import/first': 'error', // 确保引入模块的语句在所有语句之前
     'import/no-mutable-exports': 'error', // 静止let, var 这种变量的导出
     'import/no-duplicates': 'error', // 不能重复引入模块
-    'import/order': 'error',
+    'import/no-unresolved': 'off', // 关闭找不到模块
+    'import/order': [
+      'error',
+      {
+        groups: [
+          'builtin',
+          'external',
+          'internal',
+          'parent',
+          'sibling',
+          'index',
+          'object',
+          'type',
+        ],
+        pathGroups: [{ pattern: '@/**', group: 'internal' }],
+        pathGroupsExcludedImportTypes: ['type'],
+        'newlines-between': 'always',
+        alphabetize: {
+          order: 'asc',
+          caseInsensitive: true,
+        },
+      },
+    ],
     // Common： https://eslint.bootcss.com/docs/rules/
     semi: ['error', 'never'],
     curly: ['error', 'multi-or-nest', 'consistent'],

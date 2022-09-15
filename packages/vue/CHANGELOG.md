@@ -1,5 +1,13 @@
 # @jevon617/eslint-config-vue
 
+## 0.0.6
+
+### Patch Changes
+
+- close import/no-unresolved
+- Updated dependencies
+  - @jevon617/eslint-config-ts@0.0.3
+
 ## 0.0.5
 
 ### Patch Changes

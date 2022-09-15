@@ -17,17 +17,6 @@ module.exports = {
     'plugin:vue/vue3-recommended',
     '@jevon617/eslint-config-ts',
   ],
-  settings: {
-    'import/resolver': {
-      alias: {
-        map: [
-          ['@/', './src'],
-          ['~/', './typings'],
-        ],
-        extensions: ['.ts', '.tsx', '.js', '.jsx'],
-      },
-    },
-  },
   rules: {
     'vue/max-attributes-per-line': 'off',
     'vue/no-v-html': 'off',
