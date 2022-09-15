@@ -5,6 +5,16 @@ module.exports = {
       parser: 'vue-eslint-parser',
       parserOptions: {
         parser: '@typescript-eslint/parser',
+        ecmaFeatures: {
+          jsx: true,
+        },
+      },
+      globals: {
+        defineProps: 'readonly',
+        defineEmits: 'readonly',
+        defineExpose: 'readonly',
+        withDefaults: 'readonly',
+        defineOptions: 'readonly',
       },
       rules: {
         'no-unused-vars': 'off',
@@ -13,6 +23,15 @@ module.exports = {
       },
     },
   ],
+  globals: {
+    $: 'readonly',
+    $$: 'readonly',
+    $ref: 'readonly',
+    $shallowRef: 'readonly',
+    $computed: 'readonly',
+    $customRef: 'readonly',
+    $toRef: 'readonly',
+  },
   extends: [
     'plugin:vue/vue3-recommended',
     '@jevon617/eslint-config-ts',

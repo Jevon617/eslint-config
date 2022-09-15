@@ -1,5 +1,11 @@
 # @jevon617/eslint-config-vue
 
+## 0.0.7
+
+### Patch Changes
+
+- add globals to vue config
+
 ## 0.0.6
 
 ### Patch Changes
