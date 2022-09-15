@@ -1,5 +1,11 @@
 # @jevon617/eslint-config-vue
 
+## 0.0.8
+
+### Patch Changes
+
+- enable vue/max-attributes-per-line
+
 ## 0.0.7
 
 ### Patch Changes
