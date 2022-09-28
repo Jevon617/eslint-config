@@ -1,5 +1,11 @@
 # @jevon617/eslint-config-vue
 
+## 0.0.10
+
+### Patch Changes
+
+- feat: unify the component writing format
+
 ## 0.0.9
 
 ### Patch Changes

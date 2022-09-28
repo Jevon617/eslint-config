@@ -53,9 +53,9 @@ module.exports = {
       singleline: 'always',
       multiline: 'always',
     }],
-    'vue/component-name-in-template-casing': ['error', 'camelCase'],
-    'vue/component-options-name-casing': ['error', 'camelCase'],
-    'vue/custom-event-name-casing': ['error', 'camelCase'],
+    'vue/component-name-in-template-casing': ['error', 'kebab-case'],
+    'vue/component-options-name-casing': ['error', 'kebab-case'],
+    'vue/custom-event-name-casing': ['error', 'kebab-case'],
     'vue/define-macros-order': ['error', {
       order: ['defineProps', 'defineEmits'],
     }],
