@@ -1,5 +1,12 @@
 # @jevon617/eslint-config-vue
 
+## 0.0.9
+
+### Patch Changes
+
+- rule change
+  - @jevon617/eslint-config-ts@0.0.4
+
 ## 0.0.8
 
 ### Patch Changes

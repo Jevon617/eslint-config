@@ -1,5 +1,11 @@
 # @jevon617/eslint-config-basic
 
+## 0.0.4
+
+### Patch Changes
+
+- rule change
+
 ## 0.0.3
 
 ### Patch Changes
