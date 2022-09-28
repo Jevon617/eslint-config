@@ -188,7 +188,7 @@ module.exports = defineConfig({
     'no-cond-assign': ['error', 'always'],
     'func-call-spacing': ['off', 'never'],
     'key-spacing': ['error', { beforeColon: false, afterColon: true }],
-    'func-style': ['error', 'expression'],
+    'func-style': ['error', 'declaration'],
     indent: ['error', 2, { SwitchCase: 1, VariableDeclarator: 1, outerIIFEBody: 1 }],
     'no-restricted-syntax': [
       'error',
