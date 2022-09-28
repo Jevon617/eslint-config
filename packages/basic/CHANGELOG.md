@@ -1,5 +1,11 @@
 # @jevon617/eslint-config-basic
 
+## 0.0.6
+
+### Patch Changes
+
+- feat: remove func-style
+
 ## 0.0.5
 
 ### Patch Changes

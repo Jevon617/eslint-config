@@ -1,5 +1,12 @@
 # @jevon617/eslint-config-ts
 
+## 0.0.6
+
+### Patch Changes
+
+- Updated dependencies
+  - @jevon617/eslint-config-basic@0.0.6
+
 ## 0.0.5
 
 ### Patch Changes
