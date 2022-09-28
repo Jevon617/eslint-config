@@ -6,7 +6,7 @@
   "author": "jevon617 <wen.jian@belle.com.cn> (https://github.com/jevon617/)",
   "scripts": {
     "lint": "eslint . --ext .js,.ts,.json,.json5,.vue,.md --fix",
-    "release": "release:internal && release:external",
+    "release": "pnpm run release:internal && pnpm run release:external",
     "release:internal": "pnpm publish -r --registry http://m2repo.wonhigh.cn:8081/nexus/repository/npm-hosted/",
     "release:external": "pnpm publish -r --registry https://registry.npmjs.org/"
   },
