@@ -57,7 +57,7 @@ module.exports = {
     'vue/component-options-name-casing': ['error', 'kebab-case'],
     'vue/custom-event-name-casing': ['error', 'kebab-case'],
     'vue/define-macros-order': ['error', {
-      order: ['defineProps', 'defineEmits'],
+      order: ['defineOptions', 'defineEmits', 'defineSlots', 'defineProps'],
     }],
     'vue/html-comment-content-spacing': ['error', 'always', {
       exceptions: ['-'],
